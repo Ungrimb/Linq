@@ -8,13 +8,21 @@ namespace Linq
         static void Main(string[] args)
         {
             int[] numbers = new int[] { 2, 6, 8, 4, 5, 5, 9, 2, 1, 8, 7, 5, 9, 6, 4 };
-            var media = numbers.Average(x => x);
-            var max = numbers.Max(x => x);
-            var min = numbers.Min(x => x);
+            var mas5 = numbers.Where(x => x > 5).ToList();
+            var menos5 = numbers.Where(x => x < 5).ToList();
 
-            Console.WriteLine("La media de los números es {0}\nCon un máximo de {1}\nY un mínimo de {2}",media,max,min);
+            Console.WriteLine("Mayores de 5 :");
+            foreach (var nota in mas5)
+            {
+                Console.WriteLine(nota);
+            }
+            Console.WriteLine("Menores de 5 :");
+            foreach (var nota in menos5)
+            {
+                Console.WriteLine(nota);
+            }
 
-     
+
         }
     }
 }
